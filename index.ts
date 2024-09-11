@@ -41,8 +41,8 @@ const addTodoList = async () =>{
     if($todoInput !==null && $todoInput instanceof HTMLInputElement){
         const todoText = $todoInput.value;
         $todoInput.value = "";
-        await addTodoData(todoText);
-        const newTodoDatas = await getTodoData();
+        await addTodoData(todoText); // 서버에 todo추가 요청하기
+        const newTodoDatas = await getTodoData(); // 최신 todolist 받아오기
         todoListRender(newTodoDatas);
     }
     else{
